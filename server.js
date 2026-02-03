@@ -15,7 +15,12 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://certifurb.com", "https://www.certifurb.com", "http://localhost:3000"],
+    origin: [
+      "https://certifurb.com", 
+      "https://www.certifurb.com", 
+      "http://localhost:3000",
+      "https://certifurb-backend.onrender.com"
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -51,7 +56,12 @@ const googleClient = new OAuth2Client(
 );
 
 app.use(cors({
-  origin: ["https://certifurb.com", "https://www.certifurb.com", "http://localhost:3000"],
+  origin: [
+    "https://certifurb.com", 
+    "https://www.certifurb.com", 
+    "http://localhost:3000",
+    "https://certifurb-backend.onrender.com"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
